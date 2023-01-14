@@ -1,9 +1,9 @@
-import random
+from random import shuffle
 from app.animation_manager import Animation_Manager
 
 def main():
     data = list(range(1, 31))
-    random.shuffle(data)
+    shuffle(data)
 
     animation_manager = Animation_Manager(data=data, k_digits=5)
     animation_manager.visualize_bubble_sort()
