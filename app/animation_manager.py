@@ -21,10 +21,17 @@ class Animation_Manager:
         iteration = [0]
 
         def update(data, rects, iteration):
-            for rect, val in zip(rects, data):
-                rect.set_height(val)
-            iteration[0] += 1
-            text.set_text(f"# of operations: {iteration[0]}")
+            if data['done'] is False:
+                for rect, val in zip(rects, data['list']):
+                    rect.set_height(val)
+                iteration[0] += 1
+                text.set_text(f"# of operations: {iteration[0]}")
+            else:
+                index = 0
+                for rect, val in zip(rects, data['list']):
+                    if index >= (self._data_size - 1) - self._k_digits:
+                        rect.set(color='red')
+                    index += 1
 
         anim = animation.FuncAnimation(
         fig,
