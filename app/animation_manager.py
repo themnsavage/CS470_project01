@@ -30,7 +30,7 @@ class Animation_Manager:
                 index = 0
                 for rect, val in zip(rects, data['list']):
                     if index >= (self._data_size - 1) - self._k_digits:
-                        rect.set(color='red')
+                        rect.set(color='green')
                     index += 1
 
         anim = animation.FuncAnimation(
