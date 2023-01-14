@@ -5,7 +5,6 @@ class Sorting_Algorithms:
     def _swap(self,data, i, j):
         data[i], data[j] = data[j], data[i]
   
-  
     def bubble_sort(self, data):
         swapped = True
         
