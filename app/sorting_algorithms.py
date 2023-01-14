@@ -10,7 +10,7 @@ class Sorting_Algorithms:
         
         for i in range(len(data) - 1):
             if not swapped:
-                yield {'list': data, 'done': True}
+                yield {'list': data, 'is_sorting_done': True} # returning dictionary to return current data and indicator that sorting is done
                 return
             swapped = False
             
@@ -18,4 +18,4 @@ class Sorting_Algorithms:
                 if data[j] > data[j + 1]:
                     self._swap(data, j, j + 1)
                     swapped = True
-                yield {'list': data, 'done': False}
+                yield {'list': data, 'is_sorting_done': False} # returning dictionary to return current data and indicator that sorting is done

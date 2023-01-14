@@ -21,16 +21,16 @@ class Animation_Manager:
         iteration = [0]
 
         def update(data, rects, iteration):
-            if data['done'] is False:
+            if data['is_sorting_done'] is False:
                 for rect, val in zip(rects, data['list']):
                     rect.set_height(val)
                 iteration[0] += 1
                 text.set_text(f"# of operations: {iteration[0]}")
-            else:
+            else: # when bubble sort is done
                 index = 0
                 for rect, val in zip(rects, data['list']):
                     if index >= (self._data_size - 1) - self._k_digits:
-                        rect.set(color='green')
+                        rect.set(color='green') # change the kth top digits bar color to green
                     index += 1
 
         anim = animation.FuncAnimation(
