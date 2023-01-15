@@ -66,9 +66,10 @@ class Animation_Manager:
                 iteration[0] += 1
                 text.set_text(f"# of operations: {iteration[0]}")
             else: # when bubble sort is done
+                print('done')
                 index = 0
                 for rect, val in zip(rects, data['list']):
-                    if index >= (self._data_size - 1) - self._k_digits:
+                    if index < self._data_size :
                         rect.set(color='green') # change the kth top digits bar color to green
                     index += 1
 

@@ -29,18 +29,19 @@ class Sorting_Algorithms:
         pivotIdx = start
 
         for i in range(start, end):
-            if A[i] < pivot:
+            if A[i] > pivot:
                 self._swap(A, i, pivotIdx)
                 pivotIdx += 1
             yield {'list': A, 'is_sorting_done': False}
         self._swap(A, end, pivotIdx)
 
-        if(k < pivotIdx):
+        if(k - 1< pivotIdx):
             yield {'list': A, 'is_sorting_done': False}
             yield from self.quicksort(A, start, pivotIdx - 1, k)
         elif(k > pivotIdx):
             yield {'list': A, 'is_sorting_done': False}
             yield from self.quicksort(A, pivotIdx + 1, end, k)
-        else: 
+        else:
+            print('done in sorting method') 
             yield {'list': A, 'is_sorting_done': True}
-        return
+            return
