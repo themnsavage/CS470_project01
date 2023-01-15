@@ -46,3 +46,42 @@ class Animation_Manager:
 
         plt.show()
         plt.close()
+
+    def visualize_quick_sort(self):
+        data = self._data.copy()
+        generator = self._sorting_algorithms.quck_sort(data,)
+
+        fig, ax = plt.subplots()
+        ax.set_title("Bubble Sort O(n\N{SUPERSCRIPT TWO})")
+        bar_sub = ax.bar(range(len(self._data)), self._data, align="edge")
+
+        ax.set_xlim(0, self._data_size)
+        text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+        iteration = [0]
+
+        def update(data, rects, iteration):
+            if data['is_sorting_done'] is False:
+                for rect, val in zip(rects, data['list']):
+                    rect.set_height(val)
+                iteration[0] += 1
+                text.set_text(f"# of operations: {iteration[0]}")
+            else: # when bubble sort is done
+                index = 0
+                for rect, val in zip(rects, data['list']):
+                    if index >= (self._data_size - 1) - self._k_digits:
+                        rect.set(color='green') # change the kth top digits bar color to green
+                    index += 1
+
+        anim = animation.FuncAnimation(
+        fig,
+        func=update,
+        fargs=(bar_sub, iteration),
+        frames=generator,
+        repeat=False,
+        blit=False,
+        interval=15,
+        save_count=90000,
+        )
+
+        plt.show()
+        plt.close()
