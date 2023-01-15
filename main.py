@@ -7,6 +7,7 @@ def main():
 
     animation_manager = Animation_Manager(data=data, k_digits=5)
     animation_manager.visualize_bubble_sort()
+    animation_manager.visualize_bubble_sort()
 
 if __name__ == "__main__":
     main()

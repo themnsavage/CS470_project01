@@ -9,7 +9,7 @@ class Animation_Manager:
         self._data_size = len(data) + 1
 
     def visualize_bubble_sort(self):
-        data = self._data
+        data = self._data.copy()
         generator = self._sorting_algorithms.bubble_sort(data)
 
         fig, ax = plt.subplots()
