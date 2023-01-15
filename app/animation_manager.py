@@ -49,10 +49,10 @@ class Animation_Manager:
 
     def visualize_quick_sort(self):
         data = self._data.copy()
-        generator = self._sorting_algorithms.quck_sort(data,)
+        generator = self._sorting_algorithms.quicksort(data, 0, len(data)-1, self._k_digits)
 
         fig, ax = plt.subplots()
-        ax.set_title("Bubble Sort O(n\N{SUPERSCRIPT TWO})")
+        ax.set_title("Quick Sort O(n)")
         bar_sub = ax.bar(range(len(self._data)), self._data, align="edge")
 
         ax.set_xlim(0, self._data_size)
