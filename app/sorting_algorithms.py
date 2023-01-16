@@ -22,26 +22,26 @@ class Sorting_Algorithms:
     
 
     def quicksort(self, A, start, end, k):
-        if start >= end:
-            return
-
+        
         pivot = A[end]
         pivotIdx = start
+        
+        if start >= end:
+            yield {'list': A, 'is_sorting_done': True, 'finish_index': [pivotIdx, end]}
+            return
 
         for i in range(start, end):
             if A[i] > pivot:
                 self._swap(A, i, pivotIdx)
                 pivotIdx += 1
-            yield {'list': A, 'is_sorting_done': False}
+            yield {'list': A, 'is_sorting_done': False, 'finish_index': None}
         self._swap(A, end, pivotIdx)
-
-        if(k - 1< pivotIdx):
-            yield {'list': A, 'is_sorting_done': False}
+        if(k < pivotIdx):
+            yield {'list': A, 'is_sorting_done': False, 'finish_index': [pivotIdx, end]}
             yield from self.quicksort(A, start, pivotIdx - 1, k)
         elif(k > pivotIdx):
-            yield {'list': A, 'is_sorting_done': False}
+            yield {'list': A, 'is_sorting_done': False, 'finish_index': None}
             yield from self.quicksort(A, pivotIdx + 1, end, k)
         else:
-            print('done in sorting method') 
-            yield {'list': A, 'is_sorting_done': True}
+            yield {'list': A, 'is_sorting_done': True, 'finish_index': [pivotIdx, end]}
             return
