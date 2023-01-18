@@ -33,7 +33,7 @@ class Sorting_Algorithms:
             return
 
         for i in range(start, end):
-            if A[i] > pivot:
+            if A[i] >= pivot:
                 self._swap(A, i, pivotIdx)
                 pivotIdx += 1
             yield {'list': A, 'is_sorting_done': False, 'finish_index': None}
