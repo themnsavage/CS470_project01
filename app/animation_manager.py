@@ -10,7 +10,7 @@ class Animation_Manager:
 
     def visualize_bubble_sort(self):
         data = self._data.copy()
-        generator = self._sorting_algorithms.bubble_sort(data)
+        generator = self._sorting_algorithms.bubble_sort(data, self._k_digits)
 
         fig, ax = plt.subplots()
         ax.set_title("Bubble Sort O(n\N{SUPERSCRIPT TWO})")

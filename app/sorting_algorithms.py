@@ -5,10 +5,10 @@ class Sorting_Algorithms:
     def _swap(self,data, i, j):
         data[i], data[j] = data[j], data[i]
   
-    def bubble_sort(self, data):
+    def bubble_sort(self, data, k_digits = 0):
         swapped = True
         
-        for i in range(len(data) - 1):
+        for i in range(k_digits):
             if not swapped:
                 yield {'list': data, 'is_sorting_done': True} # returning dictionary to return current data and indicator that sorting is done
                 return
@@ -19,7 +19,9 @@ class Sorting_Algorithms:
                     self._swap(data, j, j + 1)
                     swapped = True
                 yield {'list': data, 'is_sorting_done': False} # returning dictionary to return current data and indicator that sorting is done
-    
+
+        yield {'list': data, 'is_sorting_done': True} # returning dictionary to return current data and indicator that sorting is done
+        return
 
     def quicksort(self, A, start, end, k):
         
