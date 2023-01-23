@@ -10,10 +10,10 @@ class Animation_Manager:
 
     def visualize_bubble_sort(self):
         data = self._data.copy()
-        generator = self._sorting_algorithms.bubble_sort(data)
+        generator = self._sorting_algorithms.bubble_sort(data, self._k_digits)
 
         fig, ax = plt.subplots()
-        ax.set_title("Bubble Sort O(n\N{SUPERSCRIPT TWO})")
+        ax.set_title(f"Bubble Sort O(n\N{SUPERSCRIPT TWO}) with k = {self._k_digits}")
         bar_sub = ax.bar(range(len(self._data)), self._data, align="edge")
 
         ax.set_xlim(0, self._data_size)
@@ -52,7 +52,7 @@ class Animation_Manager:
         generator = self._sorting_algorithms.quicksort(data, 0, len(data)-1, self._k_digits)
 
         fig, ax = plt.subplots()
-        ax.set_title("Quick Sort O(n)")
+        ax.set_title(f"Quick Sort O(n) with k = {self._k_digits}")
         bar_sub = ax.bar(range(len(self._data)), self._data, align="edge")
 
         ax.set_xlim(0, self._data_size)
