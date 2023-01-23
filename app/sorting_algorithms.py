@@ -10,12 +10,22 @@ class Sorting_Algorithms:
         pass
     
     def _swap(self,data, i, j):
+        ''' description: helper function used in bubble sort to swap two items in a list
+            data: input list
+            i: type int used to index into the list and will swap with j
+            j: type int used to index into the list and will swap with i
+        '''
         data[i], data[j] = data[j], data[i]
   
     def bubble_sort(self, data, k_digits = 0):
+        '''
+            description: bubble sort algorithm used to sort the input list in O(n^2) time complexity
+            data: input list to be sorted
+            k_digits: input k type int which is used to determine how many elements will be sorted; if no input, default to 0
+        '''
         swapped = True
         
-        for i in range(k_digits):
+        for i in range(k_digits): #for loop to check if list already sorted
             if not swapped:
                 yield {'list': data, 'is_sorting_done': True} # returning dictionary to return current data and indicator that sorting is done
                 return
