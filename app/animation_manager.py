@@ -27,8 +27,8 @@ class Animation_Manager:
         def update(data, rects, iteration):
             '''
                Description: Checks if sorting is completed and is correct; helper function that is used in the animation method to update the graph
-               data: Dictionary with input list to be animated and other variables
-               rects: Object of rectangle class from matplotlib
+               data: Dictionary with input list to be animated and other variables that indicate if done and color or rec 
+               rects: Object of rectangle object from matplotlib
                iteration: Number of operations in sort
             '''
             if data['is_sorting_done'] is False:
@@ -75,8 +75,8 @@ class Animation_Manager:
         def update(data, rects, iteration):
             '''
                Description: Checks if sorting is completed and is correct; helper function that is used in the animation method to update the graph
-               data: Dictionary with input list to be animated and other variables
-               rects: Object of rectangle class from matplotlib
+               data: Dictionary with input list to be animated and other variables that indicate if done and color or rec 
+               rects: Object of rectangle object from matplotlib
                iteration: Number of operations in sort
             '''
             if data['is_sorting_done'] is False:
