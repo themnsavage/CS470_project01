@@ -3,7 +3,11 @@ from app.sorting_algorithms import Sorting_Algorithms
 
 
 class Animation_Manager:
+    '''
+    creates animations of finding the kth largest digits using algorithms from the sorting algorithms class
+    '''
     def __init__(self, k_digits = 1, data = []):
+        
         self._sorting_algorithms = Sorting_Algorithms()
         self._k_digits = k_digits
         self._data = data
