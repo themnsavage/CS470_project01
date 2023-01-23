@@ -2,7 +2,7 @@ from random import shuffle, randint
 from app.animation_manager import Animation_Manager
 
 def main():
-    data = list(range(1, 31))
+    data = list(range(1, 30))
     shuffle(data)
     random_k_digits = randint(1, len(data))
     animation_manager = Animation_Manager(data=data, k_digits=random_k_digits)
