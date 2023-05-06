@@ -1,10 +1,10 @@
 # CS470_project01
 
 ## Bubble sort graph:
-![image](https://user-images.githubusercontent.com/60998598/235253667-be24df54-ac83-4cae-8a0a-2885b181a665.png)
+![image](https://user-images.githubusercontent.com/60998598/236640751-8e98df54-3260-479a-a7ed-f25f1e4a37de.png)
 
 ## Quickselect graph:
-![image](https://user-images.githubusercontent.com/60998598/235253758-5a6e6699-060f-4a8a-ad19-99c0e1e8146e.png)
+![image](https://user-images.githubusercontent.com/60998598/236640771-daac8aa4-8cbb-4cad-b38d-fb6b53a86b3f.png)
 
 ## Contributors
 - Matthew Noah Savage
